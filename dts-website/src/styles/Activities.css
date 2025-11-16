@@ -1,0 +1,352 @@
+/* Import Inter and Poppins fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Activities Section Base Styles */
+.activities {
+  width: 100%;
+  background: linear-gradient(180deg, #1a1c20 0%, #0f0f0f 100%);
+  padding: 100px 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.activities-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Main Heading */
+.activities-heading {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 80px 0;
+  line-height: 1.2;
+  animation: fadeInUp 0.8s ease-out;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Activities Content Layout */
+.activities-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Activities Cards Grid */
+.activities-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* Activity Card */
+.activity-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.activity-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(215, 38, 38, 0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.activity-card:hover::before {
+  opacity: 1;
+}
+
+.activity-card:hover {
+  border-color: #D72626;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 40px rgba(215, 38, 38, 0.2), 0 0 20px rgba(215, 38, 38, 0.1);
+}
+
+/* Card Icon */
+.card-icon {
+  width: 50px;
+  height: 50px;
+  color: #D72626;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.card-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 2;
+}
+
+.activity-card:hover .card-icon {
+  color: #ffffff;
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 0 10px rgba(215, 38, 38, 0.8));
+}
+
+/* Card Title */
+.card-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 12px 0;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.activity-card:hover .card-title {
+  color: #D72626;
+}
+
+/* Card Description */
+.card-description {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #cccccc;
+  line-height: 1.7;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Activities Visual */
+.activities-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.visual-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInRight 1s ease-out 0.4s both;
+}
+
+.illustration-placeholder {
+  width: 100%;
+  max-width: 360px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 28, 32, 0.5);
+  border: 1px solid rgba(215, 38, 38, 0.2);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.illustration-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(215, 38, 38, 0.1) 0%, transparent 70%);
+  animation: rotateGlow 8s linear infinite;
+}
+
+.illustration-placeholder svg {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: relative;
+}
+
+.illustration-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  position: relative;
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Right Animation */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .activities-content {
+    gap: 50px;
+  }
+  
+  .activities-heading {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 992px) {
+  .activities {
+    padding: 80px 0;
+  }
+  
+  .activities-heading {
+    font-size: 36px;
+    margin-bottom: 60px;
+  }
+  
+  .activities-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .activities-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .visual-wrapper {
+    animation: fadeInUp 1s ease-out 0.4s both;
+  }
+  
+  .illustration-placeholder {
+    max-width: 400px;
+    height: 330px;
+  }
+}
+
+@media (max-width: 768px) {
+  .activities {
+    padding: 60px 0;
+  }
+  
+  .activities-container {
+    padding: 0 15px;
+  }
+  
+  .activities-heading {
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+  
+  .activities-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .activity-card {
+    padding: 22px;
+  }
+  
+  .card-icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 18px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .card-description {
+    font-size: 14px;
+  }
+  
+  .illustration-placeholder {
+    max-width: 100%;
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .activities {
+    padding: 50px 0;
+  }
+  
+  .activities-heading {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  .activities-content {
+    gap: 40px;
+  }
+  
+  .activity-card {
+    padding: 20px;
+  }
+  
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .card-description {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  
+  .illustration-placeholder {
+    height: 250px;
+  }
+}
+

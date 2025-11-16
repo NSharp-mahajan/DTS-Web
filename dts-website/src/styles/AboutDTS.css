@@ -1,0 +1,474 @@
+/* Import Inter and Poppins fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+/* About DTS Section Base Styles */
+.about-dts {
+  width: 100%;
+  background: linear-gradient(180deg, #0f0f0f 0%, #1a1c20 100%);
+  padding: 100px 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-dts-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Main Heading */
+.about-dts-heading {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 30px 0;
+  line-height: 1.3;
+  animation: fadeInUp 0.8s ease-out;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-dts-heading .highlight {
+  color: #D72626;
+  position: relative;
+}
+
+.about-dts-heading .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, rgba(215, 38, 38, 0.5) 50%, transparent 100%);
+  animation: glowLine 2s ease-in-out infinite;
+}
+
+@keyframes glowLine {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Description */
+.about-dts-description {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #d0d0d0;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 0 80px 0;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Design Process Section */
+.design-process {
+  width: 100%;
+  margin: 0 0 60px 0;
+  position: relative;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.8s ease-out both;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+}
+
+/* Step Icon Wrapper */
+.step-icon-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.step-number {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 28px;
+  height: 28px;
+  background: #D72626;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  z-index: 3;
+  box-shadow: 0 4px 15px rgba(215, 38, 38, 0.5);
+  animation: pulseNumber 2s ease-in-out infinite;
+}
+
+@keyframes pulseNumber {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(215, 38, 38, 0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(215, 38, 38, 0.7);
+  }
+}
+
+.step-icon-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(26, 28, 32, 0.8);
+  border: 2px solid rgba(215, 38, 38, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.step-icon-circle::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  border: 2px solid #D72626;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: rotateGlow 3s linear infinite;
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.process-step:hover .step-icon-circle {
+  border-color: #D72626;
+  box-shadow: 0 0 30px rgba(215, 38, 38, 0.6), 0 0 60px rgba(215, 38, 38, 0.3);
+  transform: scale(1.1);
+}
+
+.process-step:hover .step-icon-circle::before {
+  opacity: 1;
+}
+
+.step-icon {
+  width: 50px;
+  height: 50px;
+  color: #D72626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.step-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke-width: 2.5;
+}
+
+.process-step:hover .step-icon {
+  color: #ffffff;
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Step Title */
+.step-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.process-step:hover .step-title {
+  color: #D72626;
+}
+
+/* Step Description */
+.step-description {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #d0d0d0;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+/* Process Line */
+.process-line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #D72626 20%, #D72626 80%, transparent 100%);
+  margin: 0 auto;
+  position: relative;
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+  box-shadow: 0 0 20px rgba(215, 38, 38, 0.5);
+}
+
+.process-line::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: #D72626;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(215, 38, 38, 0.8);
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.7;
+  }
+}
+
+/* Footer Description */
+.about-dts-footer {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #d0d0d0;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0;
+  animation: fadeInUp 0.8s ease-out 1s both;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .about-dts-heading {
+    font-size: 42px;
+  }
+  
+  .process-steps {
+    gap: 25px;
+  }
+  
+  .step-icon-circle {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .step-icon {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-dts {
+    padding: 80px 0;
+  }
+  
+  .about-dts-heading {
+    font-size: 36px;
+  }
+  
+  .about-dts-description {
+    font-size: 17px;
+    margin-bottom: 60px;
+  }
+  
+  .process-steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+    margin-bottom: 50px;
+  }
+  
+  .step-icon-circle {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .step-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .step-title {
+    font-size: 18px;
+  }
+  
+  .step-description {
+    font-size: 13px;
+  }
+  
+  .about-dts-footer {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-dts {
+    padding: 60px 0;
+  }
+  
+  .about-dts-container {
+    padding: 0 15px;
+  }
+  
+  .about-dts-heading {
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+  
+  .about-dts-description {
+    font-size: 16px;
+    margin-bottom: 50px;
+  }
+  
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px 25px;
+    margin-bottom: 40px;
+  }
+  
+  .step-icon-circle {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .step-icon {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .step-number {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    top: -6px;
+    right: -6px;
+  }
+  
+  .step-title {
+    font-size: 16px;
+  }
+  
+  .step-description {
+    font-size: 12px;
+  }
+  
+  .about-dts-footer {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-dts {
+    padding: 50px 0;
+  }
+  
+  .about-dts-heading {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  
+  .about-dts-description {
+    font-size: 15px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 35px;
+  }
+  
+  .step-icon-circle {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .step-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .step-number {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+  
+  .step-title {
+    font-size: 18px;
+  }
+  
+  .step-description {
+    font-size: 14px;
+  }
+  
+  .about-dts-footer {
+    font-size: 15px;
+  }
+}
+
