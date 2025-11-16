@@ -1,0 +1,261 @@
+/* Import Inter and Poppins fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Navbar Base Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  height: 85px;
+  background-color: #1a1c20;
+  border-bottom: 2px solid #D72626;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px 0 12px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Left Section with Logo and Text */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.logo-left {
+  height: 55px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.dts-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.dts-text {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e6e6e6;
+  white-space: nowrap;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.university-text {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #b0b0b0;
+  white-space: nowrap;
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* Right Section with Logo */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  margin-right: -30px;
+}
+
+.logo-right {
+  height: 65px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Center Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 45px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: #e6e6e6;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Hover Effect - Underline Animation */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
+  height: 2px;
+  background-color: #D72626;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.nav-link:hover {
+  color: #D72626;
+}
+
+.nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Active Link State */
+.nav-link.active {
+  color: #D72626;
+}
+
+.nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .nav-links {
+    gap: 35px;
+  }
+  
+  .nav-link {
+    font-size: 1.03rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0 12px 0 10px;
+  }
+  
+  .navbar-left {
+    gap: 6px;
+  }
+  
+  .nav-links {
+    gap: 25px;
+  }
+  
+  .nav-link {
+    font-size: 0.98rem;
+  }
+  
+  .logo-left {
+    height: 45px;
+  }
+  
+  .logo-right {
+    height: 55px;
+  }
+  
+  .dts-text {
+    font-size: 1rem;
+  }
+  
+  .university-text {
+    font-size: 0.8rem;
+  }
+  
+  .navbar-right {
+    margin-right: -20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 75px;
+    padding: 0 12px 0 10px;
+  }
+  
+  .navbar-left {
+    gap: 6px;
+  }
+  
+  .nav-links {
+    gap: 20px;
+  }
+  
+  .nav-link {
+    font-size: 0.93rem;
+  }
+  
+  .logo-left {
+    height: 40px;
+  }
+  
+  .logo-right {
+    height: 50px;
+  }
+  
+  .dts-text {
+    font-size: 0.9rem;
+  }
+  
+  .university-text {
+    font-size: 0.75rem;
+  }
+  
+  .navbar-right {
+    margin-right: -15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    height: 70px;
+    padding: 0 8px 0 8px;
+  }
+  
+  .navbar-left {
+    gap: 5px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+  }
+  
+  .nav-link {
+    font-size: 0.88rem;
+  }
+  
+  .logo-left {
+    height: 35px;
+  }
+  
+  .logo-right {
+    height: 45px;
+  }
+  
+  .dts-text {
+    font-size: 0.85rem;
+  }
+  
+  .university-text {
+    font-size: 0.7rem;
+  }
+  
+  .navbar-right {
+    margin-right: -10px;
+  }
+}
