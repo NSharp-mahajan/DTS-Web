@@ -1,6 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/FloatingGallery.css';
 
+// Import gallery images
+import glimpse1 from '../assets/glimpse/glimpse-1.jpg';
+import glimpse2 from '../assets/glimpse/glimpse-2.jpg';
+import glimpse3 from '../assets/glimpse/glimpse-3.jpg';
+import glimpse4 from '../assets/glimpse/glimpse-4.jpg';
+import glimpse5 from '../assets/glimpse/glimpse-5.jpg';
+import glimpse6 from '../assets/glimpse/glimpse-6.jpg';
+import glimpse7 from '../assets/glimpse/glimpse-7.jpg';
+
 const FloatingGallery = () => {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
@@ -56,15 +65,15 @@ const FloatingGallery = () => {
     }
   };
 
-  // Placeholder images - replace with actual imports
+  // Gallery images
   const images = [
-    { id: 1, alt: 'DTS Event 1', delay: 0 },
-    { id: 2, alt: 'DTS Workshop', delay: 0.2 },
-    { id: 3, alt: 'DTS Team Collaboration', delay: 0.4 },
-    { id: 4, alt: 'DTS Innovation Session', delay: 0.6 },
-    { id: 5, alt: 'DTS Creative Challenge', delay: 0.8 },
-    { id: 6, alt: 'DTS Community Event', delay: 1.0 },
-    { id: 7, alt: 'DTS Design Sprint', delay: 1.2 }
+    { id: 1, src: glimpse1, alt: 'DTS Event 1', delay: 0 },
+    { id: 2, src: glimpse2, alt: 'DTS Workshop', delay: 0.2 },
+    { id: 3, src: glimpse3, alt: 'DTS Team Collaboration', delay: 0.4 },
+    { id: 4, src: glimpse4, alt: 'DTS Innovation Session', delay: 0.6 },
+    { id: 5, src: glimpse5, alt: 'DTS Creative Challenge', delay: 0.8 },
+    { id: 6, src: glimpse6, alt: 'DTS Community Event', delay: 1.0 },
+    { id: 7, src: glimpse7, alt: 'DTS Design Sprint', delay: 1.2 }
   ];
 
   // Duplicate images for seamless loop
@@ -131,17 +140,7 @@ const FloatingGallery = () => {
                 }}
               >
                 <div className="card-image-wrapper">
-                  <div className="image-placeholder">
-                    <div className="placeholder-content">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                        <circle cx="8.5" cy="8.5" r="1.5" />
-                        <polyline points="21 15 16 10 5 21" />
-                      </svg>
-                      <span>Image {image.id}</span>
-                    </div>
-                  </div>
-                  {/* Replace placeholder with: <img src={imageSrc} alt={image.alt} /> */}
+                  <img src={image.src} alt={image.alt} className="gallery-image" />
                 </div>
               </div>
             ))}

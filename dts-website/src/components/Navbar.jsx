@@ -1,16 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import dtsLogo from '../assets/dts-logo.png';
 import universityLogo from '../assets/university-logo.png';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
+  const location = useLocation();
   const [activeLink, setActiveLink] = useState('Home');
 
-  const handleLinkClick = (linkName) => {
-    setActiveLink(linkName);
-  };
+  useEffect(() => {
+    if (location.pathname === '/contact') {
+      setActiveLink('Contact Us');
+    } else if (location.pathname === '/') {
+      setActiveLink('Home');
+    }
+  }, [location.pathname]);
 
-  const navLinks = ['Home', 'Teams', 'Events', 'Gallery', 'Contact Us'];
+  const navLinks = [
+    { label: 'Home', type: 'route', to: '/' },
+    { label: 'Teams', type: 'hash', href: '/#teams' },
+    { label: 'Events', type: 'hash', href: '/#events' },
+    { label: 'Gallery', type: 'hash', href: '/#gallery' },
+    { label: 'Contact Us', type: 'route', to: '/contact' },
+  ];
+
+  const handleLinkClick = (label) => {
+    setActiveLink(label);
+  };
 
   return (
     <nav className="navbar">
@@ -23,16 +39,31 @@ const Navbar = () => {
       </div>
       
       <div className="nav-links">
-        {navLinks.map((link) => (
-          <a
-            key={link}
-            href={`#${link.toLowerCase().replace(' ', '-')}`}
-            className={`nav-link ${activeLink === link ? 'active' : ''}`}
-            onClick={() => handleLinkClick(link)}
-          >
-            {link}
-          </a>
-        ))}
+        {navLinks.map((link) => {
+          if (link.type === 'route') {
+            return (
+              <Link
+                key={link.label}
+                to={link.to}
+                className={`nav-link ${activeLink === link.label ? 'active' : ''}`}
+                onClick={() => handleLinkClick(link.label)}
+              >
+                {link.label}
+              </Link>
+            );
+          }
+
+          return (
+            <a
+              key={link.label}
+              href={link.href}
+              className={`nav-link ${activeLink === link.label ? 'active' : ''}`}
+              onClick={() => handleLinkClick(link.label)}
+            >
+              {link.label}
+            </a>
+          );
+        })}
       </div>
       
       <div className="navbar-right">
