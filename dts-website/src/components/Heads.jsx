@@ -12,19 +12,19 @@ const heads = [
     role: 'Organizing Head',
     name: 'Pranjal Raheja',
     image: pranjalImg,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/pranjal-raheja-637977331?utm_source=share_via&utm_content=profile&utm_medium=member_android'
   },
   {
     role: 'Technical Head',
     name: 'Natansh Mahajan',
     image: natanshImg,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/natansh-mahajan-287b19316/'
   },
   {
     role: 'Content Head',
     name: 'Kashvi Soni',
     image: kashviImg,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/kashvi-soni-108630331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
   },
   {
     role: 'Outreach Sponsors Head',
@@ -36,7 +36,7 @@ const heads = [
     role: 'Outreach Promotion Head',
     name: 'Diksha Aggarwal',
     image: dikshaImg,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/diksha-aggarwal-78626b346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
   },
   {
     role: 'Social Media Head',
@@ -49,7 +49,7 @@ const heads = [
     name: 'Smarth Aneja',
     image: smarthImg,
     position: 'center 15%',
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/smarthaneja?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'
   }
 ]
 

@@ -12,13 +12,13 @@ const Teams = () => {
       name: "Gurvinder Singh",
       role: "Associate Prof. & DTS Lead",
       image: gurvinderImg,
-      linkedin: "#"
+      linkedin: "https://www.linkedin.com/in/dr-gurvinder-singh-ab8b7929/"
     },
     {
       name: "Dr. Raj Gaurang Tiwari",
       role: "Prof. & Dean, CSE",
       image: rajGourangImg,
-      linkedin: "#"
+      linkedin: "https://www.linkedin.com/in/dr-raj-gaurang-tiwari-b5097216/"
     }
   ];
 

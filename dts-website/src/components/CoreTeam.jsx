@@ -15,7 +15,7 @@ const coreTeam = [
     name: 'Bhavya Chaudhary',
     role: 'Vice President, DTS',
     image: coreTwo,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/bhavya-kakkar-07a703338?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
   },
   {
     name: 'Krish Suri',
