@@ -1,0 +1,383 @@
+/* Import Inter and Poppins fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Teams Page Base */
+.teams-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0D0D0D 0%, #171717 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.teams-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Hero Heading Section */
+.teams-hero {
+  padding: 120px 0 70px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.teams-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(215, 38, 38, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.teams-hero-heading {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 72px;
+  font-weight: 900;
+  background: linear-gradient(120deg, #F54768, #FF7A5C, #FFD460);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 30px 0;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  position: relative;
+  animation: fadeInUp 0.8s ease-out;
+  text-shadow: 0 5px 25px rgba(0, 0, 0, 0.6), 0 0 35px rgba(245, 71, 104, 0.35);
+}
+
+.teams-hero-subheading {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #FCEFEB;
+  margin: 0 0 25px 0;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.teams-hero-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #dcd4d1;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* ============================================
+   PILLARS / FACULTY SECTION
+   ============================================ */
+.teams-pillars {
+  padding: 70px 0 90px;
+  position: relative;
+}
+
+.teams-pillars::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(215, 38, 38, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pillar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out both;
+  position: relative;
+  z-index: 1;
+}
+
+/* Futuristic Polygon Frame */
+.pillar-polygon-frame {
+  width: 340px;
+  height: 340px;
+  position: relative;
+  margin-bottom: 25px;
+  animation: floatPolygon 3s ease-in-out infinite;
+  border-radius: 50%;
+  border: 2px solid rgba(215, 38, 38, 0.4);
+  background: radial-gradient(circle, rgba(215, 38, 38, 0.18) 0%, transparent 70%);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45), inset 0 0 30px rgba(215, 38, 38, 0.25);
+}
+
+@keyframes floatPolygon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.polygon-glow {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle, rgba(215, 38, 38, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(15px);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.polygon-outline {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 2px solid #D72626;
+  border-radius: 50%;
+  opacity: 0.9;
+  box-shadow: 
+    0 0 25px rgba(215, 38, 38, 0.5),
+    inset 0 0 25px rgba(215, 38, 38, 0.15),
+    0 0 50px rgba(215, 38, 38, 0.2);
+  animation: outlinePulse 2s ease-in-out infinite;
+}
+
+@keyframes outlinePulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 25px rgba(215, 38, 38, 0.5),
+      inset 0 0 25px rgba(215, 38, 38, 0.15),
+      0 0 50px rgba(215, 38, 38, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 35px rgba(215, 38, 38, 0.7),
+      inset 0 0 30px rgba(215, 38, 38, 0.25),
+      0 0 60px rgba(215, 38, 38, 0.3);
+  }
+}
+
+.pillar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.pillar-card:hover .pillar-image {
+  transform: scale(1.05);
+}
+
+.pillar-name {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+  text-shadow: 0 10px 25px rgba(0, 0, 0, 0.45), 0 0 20px rgba(215, 38, 38, 0.2);
+}
+
+.pillar-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFB56B;
+  margin: 0 0 20px 0;
+}
+
+.pillar-linkedin {
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pillar-linkedin svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+}
+
+.pillar-linkedin:hover {
+  color: #D72626;
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(215, 38, 38, 0.8));
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .teams-hero-heading {
+    font-size: 64px;
+  }
+  
+  .teams-hero-subheading {
+    font-size: 26px;
+  }
+  
+  .pillars-grid {
+    gap: 50px;
+  }
+  
+  .pillar-polygon-frame {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 992px) {
+  .teams-hero {
+    padding: 130px 0 80px;
+  }
+  
+  .teams-hero-heading {
+    font-size: 56px;
+  }
+  
+  .teams-hero-subheading {
+    font-size: 24px;
+  }
+  
+  .teams-hero-description {
+    font-size: 17px;
+  }
+  
+  .pillars-grid {
+    gap: 45px;
+  }
+  
+  .pillar-polygon-frame {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .teams-container {
+    padding: 0 20px;
+  }
+  
+  .teams-hero {
+    padding: 120px 0 60px;
+  }
+  
+  .teams-hero-heading {
+    font-size: 48px;
+  }
+  
+  .teams-hero-subheading {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .teams-hero-description {
+    font-size: 16px;
+  }
+  
+  .teams-pillars {
+    padding: 70px 0;
+  }
+  
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .pillar-polygon-frame {
+    width: 230px;
+    height: 230px;
+  }
+  
+  .pillar-name {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .teams-hero {
+    padding: 100px 0 50px;
+  }
+  
+  .teams-hero-heading {
+    font-size: 40px;
+  }
+  
+  .teams-hero-subheading {
+    font-size: 20px;
+  }
+  
+  .teams-hero-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  
+  .teams-pillars {
+    padding: 50px 0;
+  }
+  
+  .pillars-grid {
+    gap: 40px;
+  }
+  
+  .pillar-polygon-frame {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .pillar-name {
+    font-size: 22px;
+  }
+  
+  .pillar-role {
+    font-size: 15px;
+  }
+}

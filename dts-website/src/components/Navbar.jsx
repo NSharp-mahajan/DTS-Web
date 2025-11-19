@@ -11,6 +11,12 @@ const Navbar = () => {
   useEffect(() => {
     if (location.pathname === '/contact') {
       setActiveLink('Contact Us');
+    } else if (location.pathname === '/events') {
+      setActiveLink('Events');
+    } else if (location.pathname === '/projects') {
+      setActiveLink('Projects');
+    } else if (location.pathname === '/teams') {
+      setActiveLink('Teams');
     } else if (location.pathname === '/') {
       setActiveLink('Home');
     }
@@ -18,9 +24,9 @@ const Navbar = () => {
 
   const navLinks = [
     { label: 'Home', type: 'route', to: '/' },
-    { label: 'Teams', type: 'hash', href: '/#teams' },
-    { label: 'Events', type: 'hash', href: '/#events' },
-    { label: 'Gallery', type: 'hash', href: '/#gallery' },
+    { label: 'Teams', type: 'route', to: '/teams' },
+    { label: 'Events', type: 'route', to: '/events' },
+    { label: 'Projects', type: 'route', to: '/projects' },
     { label: 'Contact Us', type: 'route', to: '/contact' },
   ];
 

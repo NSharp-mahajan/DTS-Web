@@ -1,0 +1,209 @@
+.core-team {
+  width: 100%;
+  padding: 80px 0 120px;
+  background: linear-gradient(180deg, rgba(5, 5, 5, 0) 0%, rgba(8, 8, 8, 0.8) 30%, #040404 100%);
+}
+
+.core-team-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.core-team-header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: coreFadeUp 0.8s ease both;
+}
+
+.core-team-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.core-team-underline {
+  display: inline-block;
+  width: 140px;
+  height: 3px;
+  margin: 18px auto 22px;
+  background: linear-gradient(90deg, transparent, #D72626, transparent);
+  box-shadow: 0 0 16px rgba(215, 38, 38, 0.6);
+  animation: underlineGlow 2.6s ease-in-out infinite;
+}
+
+.core-team-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  color: #dadada;
+  margin: 0 auto;
+  max-width: 760px;
+  line-height: 1.7;
+}
+
+.core-team-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 80px;
+  justify-items: center;
+  padding-top: 10px;
+}
+
+.core-team-card {
+  text-align: center;
+  animation: coreFadeUp 0.85s ease forwards;
+  opacity: 0;
+}
+
+.core-team-card:hover .core-team-portrait-outline {
+  box-shadow:
+    0 0 30px rgba(215, 38, 38, 0.6),
+    inset 0 0 25px rgba(215, 38, 38, 0.25);
+}
+
+.core-team-card:hover .core-team-portrait-img {
+  transform: scale(1.03);
+}
+
+.core-team-portrait {
+  width: 340px;
+  height: 340px;
+  margin: 0 auto 20px;
+  position: relative;
+  animation: floatOrbit 4s ease-in-out infinite;
+}
+
+.core-team-portrait-glow {
+  position: absolute;
+  inset: -18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(215, 38, 38, 0.25) 20%, transparent 70%);
+  filter: blur(16px);
+}
+
+.core-team-portrait-outline {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid rgba(215, 38, 38, 0.8);
+  box-shadow:
+    0 0 22px rgba(215, 38, 38, 0.45),
+    inset 0 0 18px rgba(215, 38, 38, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.core-team-portrait-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.core-team-name {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 1.35rem;
+  color: #ffffff;
+  font-weight: 700;
+  margin: 20px 0 8px;
+}
+
+.core-team-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #cfcfcf;
+  margin: 0;
+}
+
+.core-team-link {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  margin-top: 18px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.core-team-link svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+}
+
+.core-team-link:hover {
+  color: #D72626;
+  transform: scale(1.12);
+}
+
+@keyframes coreFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatOrbit {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes underlineGlow {
+  0%, 100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .core-team-title {
+    font-size: 46px;
+  }
+
+  .core-team-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 60px;
+  }
+
+  .core-team-portrait {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .core-team-container {
+    padding: 0 18px;
+  }
+
+  .core-team-title {
+    font-size: 36px;
+  }
+
+  .core-team-row {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .core-team-portrait {
+    width: 260px;
+    height: 260px;
+  }
+}
+
