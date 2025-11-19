@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Activities.css';
+import graphicsImage from '../assets/graphics.png';
 
 const Activities = () => {
   const activities = [
@@ -70,24 +71,8 @@ const Activities = () => {
           
           <div className="activities-visual">
             <div className="visual-wrapper">
-              {/* Placeholder for 3D illustration - replace with actual image */}
               <div className="illustration-placeholder">
-                <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="400" height="400" fill="url(#gradient)" opacity="0.1"/>
-                  <defs>
-                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#D72626" />
-                      <stop offset="100%" stopColor="#0D0D0D" />
-                    </linearGradient>
-                  </defs>
-                  <text x="200" y="200" textAnchor="middle" fill="#D72626" fontSize="24" fontFamily="Arial">
-                    3D Illustration
-                  </text>
-                  <text x="200" y="230" textAnchor="middle" fill="#666" fontSize="14" fontFamily="Arial">
-                    Placeholder
-                  </text>
-                </svg>
-                {/* Replace above SVG with: <img src={illustrationImage} alt="Activities Illustration" /> */}
+                <img src={graphicsImage} alt="DTS Activities Illustration" />
               </div>
             </div>
           </div>

@@ -1,0 +1,575 @@
+/* Import Premium Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+/* ============================================
+   MODAL OVERLAY
+   ============================================ */
+.project-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
+  animation: modalFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   MODAL CONTAINER
+   ============================================ */
+.project-modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 80vh;
+  border-radius: 40px;
+  overflow: hidden;
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 20px 80px rgba(0, 0, 0, 0.8),
+    0 0 100px rgba(215, 38, 38, 0.2);
+  animation: modalScaleIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  isolation: isolate;
+}
+
+@keyframes modalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ============================================
+   BLURRED BACKGROUND
+   ============================================ */
+.modal-background-blur {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(60px) brightness(0.3) saturate(1.2);
+  z-index: 1;
+  animation: backgroundPulse 8s ease-in-out infinite;
+}
+
+@keyframes backgroundPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* ============================================
+   DEPTH GLOW LAYERS
+   ============================================ */
+.modal-depth-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(215, 38, 38, 0.3) 0%,
+    rgba(215, 38, 38, 0.15) 40%,
+    transparent 70%
+  );
+  z-index: 2;
+  pointer-events: none;
+  filter: blur(80px);
+  animation: depthGlowPulse 4s ease-in-out infinite;
+}
+
+@keyframes depthGlowPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+.modal-depth-glow-secondary {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(
+    circle,
+    rgba(215, 38, 38, 0.2) 0%,
+    transparent 70%
+  );
+  z-index: 2;
+  pointer-events: none;
+  filter: blur(60px);
+  animation: secondaryGlowFloat 6s ease-in-out infinite;
+}
+
+@keyframes secondaryGlowFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(20px, -30px) scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+/* ============================================
+   CLOSE BUTTON
+   ============================================ */
+.modal-close-button {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: closeButtonFadeIn 0.5s ease-out 0.2s both;
+}
+
+@keyframes closeButtonFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.modal-close-button:hover {
+  background: rgba(215, 38, 38, 0.2);
+  border-color: rgba(215, 38, 38, 0.5);
+  color: #D72626;
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 8px 24px rgba(215, 38, 38, 0.4);
+}
+
+.modal-close-button:active {
+  transform: scale(1.05) rotate(90deg);
+}
+
+.modal-close-button svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+}
+
+/* ============================================
+   MODAL CONTENT
+   ============================================ */
+.modal-content {
+  position: relative;
+  z-index: 3;
+  padding: 80px 60px;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content-inner {
+  width: 100%;
+  max-width: 800px;
+  animation: contentFadeIn 0.6s ease-out 0.2s both;
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   MODAL TITLE
+   ============================================ */
+.modal-title {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0 0 30px 0;
+  text-shadow: 
+    0 0 40px rgba(215, 38, 38, 0.5),
+    0 4px 20px rgba(0, 0, 0, 0.8);
+  animation: titleReveal 0.8s ease-out 0.3s both;
+}
+
+@keyframes titleReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+/* ============================================
+   MODAL DESCRIPTION
+   ============================================ */
+.modal-description {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 50px 0;
+  animation: descriptionReveal 0.8s ease-out 0.4s both;
+}
+
+@keyframes descriptionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   TEAM SECTION
+   ============================================ */
+.modal-team-section {
+  margin-bottom: 40px;
+  animation: teamReveal 0.8s ease-out 0.5s both;
+}
+
+@keyframes teamReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.modal-team-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(215, 38, 38, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+
+.modal-team-name {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   MEMBERS SECTION
+   ============================================ */
+.modal-members-section {
+  margin-bottom: 50px;
+  animation: membersReveal 0.8s ease-out 0.6s both;
+}
+
+@keyframes membersReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-members-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(215, 38, 38, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+}
+
+.modal-members-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.modal-member-avatar {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(215, 38, 38, 0.5);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.modal-member-avatar:hover {
+  transform: scale(1.15) translateY(-4px);
+  border-color: rgba(215, 38, 38, 1);
+  box-shadow: 0 8px 24px rgba(215, 38, 38, 0.5);
+}
+
+.modal-member-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.member-avatar-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle,
+    rgba(215, 38, 38, 0.4) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  filter: blur(10px);
+}
+
+.modal-member-avatar:hover .member-avatar-glow {
+  opacity: 1;
+}
+
+/* ============================================
+   VISIT BUTTON
+   ============================================ */
+.modal-visit-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(215, 38, 38, 0.9), rgba(215, 38, 38, 0.7));
+  backdrop-filter: blur(20px);
+  padding: 18px 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(215, 38, 38, 0.5);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 8px 32px rgba(215, 38, 38, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  animation: buttonReveal 0.8s ease-out 0.7s both;
+}
+
+@keyframes buttonReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-visit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transition: left 0.6s ease;
+}
+
+.modal-visit-button:hover::before {
+  left: 100%;
+}
+
+.modal-visit-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(135deg, rgba(215, 38, 38, 1), rgba(215, 38, 38, 0.8));
+  border-color: rgba(215, 38, 38, 0.8);
+  box-shadow: 
+    0 12px 40px rgba(215, 38, 38, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.modal-visit-button:active {
+  transform: translateY(0) scale(1);
+}
+
+.modal-visit-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.modal-visit-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .project-modal-overlay {
+    padding: 10px;
+  }
+
+  .project-modal-container {
+    border-radius: 30px;
+    min-height: 90vh;
+  }
+
+  .modal-content {
+    padding: 60px 30px;
+  }
+
+  .modal-close-button {
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .modal-close-button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .modal-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 24px;
+  }
+
+  .modal-description {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+    margin-bottom: 40px;
+  }
+
+  .modal-team-section {
+    margin-bottom: 30px;
+  }
+
+  .modal-team-name {
+    font-size: 1.3rem;
+  }
+
+  .modal-members-section {
+    margin-bottom: 40px;
+  }
+
+  .modal-member-avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  .modal-visit-button {
+    font-size: 1rem;
+    padding: 16px 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-modal-container {
+    border-radius: 24px;
+  }
+
+  .modal-content {
+    padding: 50px 24px;
+  }
+
+  .modal-close-button {
+    top: 15px;
+    right: 15px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .modal-title {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+  }
+
+  .modal-visit-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
