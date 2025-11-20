@@ -6,6 +6,7 @@ import kashviImg from '../assets/kashvi.jpg'
 import vihanImg from '../assets/vihan.jpg'
 import dikshaImg from '../assets/Diksha.jpg'
 import smarthImg from '../assets/smarth.jpg'
+import vanshikaImg from '../assets/Vanshika.JPG'
 
 const heads = [
   {
@@ -41,7 +42,7 @@ const heads = [
   {
     role: 'Social Media Head',
     name: 'Vanshika',
-    image: 'https://via.placeholder.com/400x450?text=Vanshika',
+    image: vanshikaImg,
     linkedin: '#'
   },
   {
