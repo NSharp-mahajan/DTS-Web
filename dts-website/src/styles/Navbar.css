@@ -24,15 +24,17 @@
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   flex-shrink: 0;
+  padding-left: 20px;
 }
 
 .logo-left {
-  height: 55px;
+  height: 115px;
   width: auto;
   display: block;
   flex-shrink: 0;
+  filter: drop-shadow(0 0 10px rgba(215, 38, 38, 0.5));
 }
 
 .dts-text-container {
@@ -44,7 +46,7 @@
 
 .dts-text {
   font-family: 'Inter', 'Poppins', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #e6e6e6;
   white-space: nowrap;
@@ -54,7 +56,7 @@
 
 .university-text {
   font-family: 'Inter', 'Poppins', sans-serif;
-  font-size: 0.85rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: #b0b0b0;
   white-space: nowrap;
@@ -68,7 +70,8 @@
   align-items: center;
   justify-content: flex-end;
   flex-shrink: 0;
-  margin-right: -30px;
+  margin-right: 0;
+  padding-right: 20px;
 }
 
 .logo-right {
@@ -91,7 +94,7 @@
 
 .nav-link {
   font-family: 'Inter', 'Poppins', sans-serif;
-  font-size: 1.08rem;
+  font-size: 1.3rem;
   font-weight: 500;
   color: #e6e6e6;
   text-decoration: none;
@@ -162,11 +165,11 @@
   }
   
   .logo-left {
-    height: 45px;
+    height: 75px;
   }
   
   .logo-right {
-    height: 55px;
+    height: 60px;
   }
   
   .dts-text {
@@ -201,11 +204,11 @@
   }
   
   .logo-left {
-    height: 40px;
+    height: 65px;
   }
   
   .logo-right {
-    height: 50px;
+    height: 55px;
   }
   
   .dts-text {
@@ -240,11 +243,11 @@
   }
   
   .logo-left {
-    height: 35px;
+    height: 80px;
   }
   
   .logo-right {
-    height: 45px;
+    height: 50px;
   }
   
   .dts-text {

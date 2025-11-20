@@ -6,20 +6,20 @@ import coreThree from '../assets/krish.jpg'
 
 const coreTeam = [
   {
-    name: 'Dikshit Kapil',
-    role: 'President, DTS',
+    name: 'Dikshit Garg',
+    role: 'Core Team Member',
     image: coreOne,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/dikshit-garg-0a6702331/'
   },
   {
-    name: 'Bhavya Chaudhary',
-    role: 'Vice President, DTS',
+    name: 'Bhavya Kakkar',
+    role: 'Core Team Member',
     image: coreTwo,
     linkedin: 'https://www.linkedin.com/in/bhavya-kakkar-07a703338?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
   },
   {
-    name: 'Krish Suri',
-    role: 'Executive Head, DTS',
+    name: 'Krish Kakar',
+    role: 'Core Team Member',
     image: coreThree,
     linkedin: '#'
   }

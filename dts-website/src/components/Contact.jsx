@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Contact.css';
 
 const Contact = () => {
@@ -7,6 +7,10 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
+  const [toastType, setToastType] = useState('success'); // 'success' or 'error'
 
   const handleChange = (e) => {
     setFormData({
@@ -15,18 +19,109 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+  const showToastMessage = (message, type = 'success') => {
+    setToastMessage(message);
+    setToastType(type);
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 5000);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('http://localhost:5000/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Success
+        showToastMessage('Your message has been delivered! 🚀', 'success');
+        // Reset form
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        // Error from server
+        showToastMessage(data.message || 'Something went wrong. Please try again.', 'error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      showToastMessage('Failed to send message. Please check your connection and try again.', 'error');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const contactRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (contactRef.current) {
+      observer.observe(contactRef.current);
+    }
+
+    return () => {
+      if (contactRef.current) {
+        observer.unobserve(contactRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="contact-section">
+    <section className="contact-section" ref={contactRef}>
+      {/* Toast Notification */}
+      {showToast && (
+        <div className={`contact-toast ${toastType}`}>
+          <div className="toast-content">
+            <div className="toast-icon">
+              {toastType === 'success' ? (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="8" x2="12" y2="12" />
+                  <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+              )}
+            </div>
+            <span className="toast-message">{toastMessage}</span>
+          </div>
+          <button 
+            className="toast-close" 
+            onClick={() => setShowToast(false)}
+            aria-label="Close notification"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      )}
+
       <div className="contact-container">
-        <div className="contact-content">
+        <div className={`contact-content ${isVisible ? 'visible' : ''}`}>
           {/* Left Side - Contact Info */}
           <div className="contact-info">
             <h2 className="contact-title">Contact Us</h2>
@@ -88,6 +183,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 />
               </div>
 
@@ -101,6 +197,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 />
               </div>
 
@@ -114,11 +211,23 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                 ></textarea>
               </div>
 
-              <button type="submit" className="submit-btn">
-                Send Message
+              <button 
+                type="submit" 
+                className="submit-btn"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <span className="btn-spinner"></span>
+                    Sending...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
               </button>
             </form>
           </div>
@@ -129,4 +238,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import dtsLogo from '../assets/dts-logo.png';
-import universityLogo from '../assets/university-logo.png';
+import universityLogo from '../assets/university-logo.jpg';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
