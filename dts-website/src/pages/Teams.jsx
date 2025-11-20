@@ -9,16 +9,16 @@ const Teams = () => {
   // Pillars/Faculty Data
   const pillars = [
     {
-      name: "Gurvinder Singh",
-      role: "Associate Prof. & DTS Lead",
-      image: gurvinderImg,
-      linkedin: "https://www.linkedin.com/in/dr-gurvinder-singh-ab8b7929/"
-    },
-    {
       name: "Dr. Raj Gaurang Tiwari",
       role: "Prof. & Dean, CSE",
       image: rajGourangImg,
       linkedin: "https://www.linkedin.com/in/dr-raj-gaurang-tiwari-b5097216/"
+    },
+    {
+      name: "Dr. Gurvinder Singh",
+      role: "Associate Prof. & DTS Lead",
+      image: gurvinderImg,
+      linkedin: "https://www.linkedin.com/in/dr-gurvinder-singh-ab8b7929/"
     }
   ];
 
