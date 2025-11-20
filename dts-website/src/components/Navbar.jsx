@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import dtsLogo from '../assets/dts-logo.png';
-import universityLogo from '../assets/university-logo.png';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -70,10 +69,6 @@ const Navbar = () => {
             </a>
           );
         })}
-      </div>
-      
-      <div className="navbar-right">
-        <img src={universityLogo} alt="Chitkara University Logo" className="logo-right" />
       </div>
     </nav>
   );

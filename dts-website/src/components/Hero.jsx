@@ -61,7 +61,8 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="hero-content">
         <h1 className="hero-heading">
-          <span className="shimmer-text">WELCOME TO THE DESIGN THINKING SOCIETY</span>
+          <span className="shimmer-text hero-heading-line">Welcome To</span>
+          <span className="shimmer-text hero-heading-line hero-heading-emphasis">DESIGN THINKING SOCIETY</span>
         </h1>
         
         <p className="hero-tagline">
