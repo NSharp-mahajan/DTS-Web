@@ -4,6 +4,7 @@ import '../styles/Projects.css'
 import ProjectModal from '../components/ProjectModal'
 import cyberCopImage from '../assets/Projects/CyberCop.png'
 import blueGuardImage from '../assets/Projects/BlueGuard.jpg'
+import shaktiXImage from '../assets/Projects/ShaktiX.png'
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null)
@@ -29,6 +30,17 @@ const Projects = () => {
       image: blueGuardImage,
       liveLink: null,
       linkedinLink: 'https://www.linkedin.com/in/dikshit-garg-0a6702331/',
+      members: []
+    },
+    {
+      id: 3,
+      title: 'ShaktiX',
+      description: 'AI-powered personal protection platform delivering health, safety, and cybersecurity monitoring with a unified experience.',
+      team: 'Radhika Sood',
+      image: shaktiXImage,
+      liveLink: null,
+      linkedinLink: 'https://www.linkedin.com/in/radhika-sood-5bb82433b/',
+      githubLink: 'https://github.com/RadhikaSood311/ShaktiX',
       members: []
     }
   ]
@@ -128,7 +140,8 @@ const CTASection = () => {
       {/* Content */}
       <div className={`cta-content ${isVisible ? 'visible' : ''}`}>
         <h2 className="cta-title">
-          More Drops Coming Soon.
+          More Drops Coming Soon
+          <AnimatedEllipsis />
         </h2>
         <p className="cta-subtitle">
           If you want to build with us or pitch something exciting, reach out via our Contact Form.
@@ -221,5 +234,13 @@ const ProjectCard = ({ project, index, onClick }) => {
     </article>
   )
 }
+
+const AnimatedEllipsis = () => (
+  <span className="cta-dots" aria-hidden="true">
+    <span />
+    <span />
+    <span />
+  </span>
+)
 
 export default Projects

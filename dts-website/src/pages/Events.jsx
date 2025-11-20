@@ -82,7 +82,11 @@ const PreviousEventsSection = ({ events }) => {
   }, []);
 
   return (
-    <section ref={sectionRef} className={`previous-events-section ${isVisible ? 'visible' : ''}`}>
+    <section
+      id="previous-events"
+      ref={sectionRef}
+      className={`previous-events-section ${isVisible ? 'visible' : ''}`}
+    >
       {/* Floating Particles Background */}
       <div className="pe-particles">
         {[...Array(15)].map((_, i) => (
