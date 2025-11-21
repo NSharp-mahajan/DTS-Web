@@ -64,6 +64,42 @@
   text-align: left;
 }
 
+/* Hamburger Menu Button */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+  position: relative;
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 3px;
+  background-color: #e6e6e6;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
 /* Center Navigation Links */
 .nav-links {
   display: flex;
@@ -169,14 +205,45 @@
   
   .navbar-left {
     gap: 6px;
+    padding-left: 10px;
+  }
+  
+  .hamburger-menu {
+    display: flex;
   }
   
   .nav-links {
-    gap: 20px;
+    position: fixed;
+    top: 75px;
+    left: 0;
+    right: 0;
+    background-color: #1a1c20;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-top: 2px solid #D72626;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 998;
+    max-height: calc(100vh - 75px);
+    overflow-y: auto;
+  }
+  
+  .nav-links.active {
+    transform: translateX(0);
   }
   
   .nav-link {
-    font-size: 0.93rem;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-link:last-child {
+    border-bottom: none;
   }
   
   .logo-left {
@@ -201,26 +268,56 @@
   
   .navbar-left {
     gap: 5px;
+    padding-left: 5px;
+  }
+  
+  .hamburger-menu {
+    width: 28px;
+    height: 28px;
   }
   
   .nav-links {
-    gap: 15px;
+    top: 70px;
+    max-height: calc(100vh - 70px);
   }
   
   .nav-link {
-    font-size: 0.88rem;
+    font-size: 1rem;
+    padding: 12px 0;
   }
   
   .logo-left {
-    height: 80px;
+    height: 60px;
   }
   
   .dts-text {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
   
   .university-text {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
   
+}
+
+@media (max-width: 400px) {
+  .navbar-left {
+    gap: 4px;
+  }
+  
+  .logo-left {
+    height: 55px;
+  }
+  
+  .dts-text {
+    font-size: 0.75rem;
+  }
+  
+  .university-text {
+    font-size: 0.6rem;
+  }
+  
+  .dts-text-container {
+    gap: 1px;
+  }
 }

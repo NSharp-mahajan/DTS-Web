@@ -6,6 +6,7 @@ import '../styles/Navbar.css';
 const Navbar = () => {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState('Home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (location.pathname === '/contact') {
@@ -19,6 +20,8 @@ const Navbar = () => {
     } else if (location.pathname === '/') {
       setActiveLink('Home');
     }
+    // Close menu when route changes
+    setIsMenuOpen(false);
   }, [location.pathname]);
 
   const navLinks = [
@@ -31,6 +34,11 @@ const Navbar = () => {
 
   const handleLinkClick = (label) => {
     setActiveLink(label);
+    setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -43,7 +51,17 @@ const Navbar = () => {
         </div>
       </div>
       
-      <div className="nav-links">
+      <button 
+        className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`}
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         {navLinks.map((link) => {
           if (link.type === 'route') {
             return (
