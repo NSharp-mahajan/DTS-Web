@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import NoLiveEvents from '../components/NoLiveEvents'
+import PremiumPostersGallery from '../components/PremiumPostersGallery'
 import '../styles/Events.css'
 import acePoster from '../assets/posters/ACE.jpg'
 import fusionPoster from '../assets/posters/Fusion.jpg'
@@ -9,9 +10,6 @@ import glimpse3 from '../assets/glimpse/glimpse-3.jpg'
 import glimpse4 from '../assets/glimpse/glimpse-4.jpg'
 import glimpse5 from '../assets/glimpse/glimpse-5.jpg'
 import glimpse6 from '../assets/glimpse/glimpse-6.jpg'
-import glimpse7 from '../assets/glimpse/glimpse-7.jpg'
-import fusionSample from '../assets/fusion_sample.jpg'
-import sample3 from '../assets/sample_3.jpg'
 
 const Events = () => {
   // Previous events data
@@ -50,6 +48,7 @@ const Events = () => {
     <div className="events-page">
       <NoLiveEvents />
       <PreviousEventsSection events={previousEvents} />
+      <PremiumPostersGallery />
     </div>
   )
 }

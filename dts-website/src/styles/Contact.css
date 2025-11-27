@@ -181,6 +181,67 @@
   color: #ffffff;
 }
 
+.contact-social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.contact-social-label {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+.contact-social-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.contact-social-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.contact-social-btn.instagram {
+  background: linear-gradient(120deg, #f58529, #dd2a7b, #8134af);
+  box-shadow: 0 10px 25px rgba(221, 42, 123, 0.35);
+}
+
+.contact-social-btn.linkedin {
+  background: linear-gradient(120deg, #0a66c2, #004182);
+  box-shadow: 0 10px 25px rgba(10, 102, 194, 0.35);
+}
+
+.contact-social-btn:hover {
+  transform: translateY(-2px) scale(1.01);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
 /* Right Side - Contact Form */
 .contact-form-wrapper {
   width: 100%;

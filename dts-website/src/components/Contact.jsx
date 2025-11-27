@@ -168,6 +168,40 @@ const Contact = () => {
                 </div>
               </div>
             </div>
+
+            <div className="contact-social-links">
+              <p className="contact-social-label">Connect with us</p>
+              <div className="contact-social-actions">
+                <a
+                  href="https://www.instagram.com/design_thinking_chitkara/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-social-btn instagram"
+                  aria-label="Design Thinking Society Instagram"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="6" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <circle cx="17.5" cy="6.5" r="1.25" />
+                  </svg>
+                  Instagram
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/design-thinking-cuiet/posts/?feedView=all"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-social-btn linkedin"
+                  aria-label="Design Thinking Society LinkedIn"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                  LinkedIn
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Right Side - Contact Form */}

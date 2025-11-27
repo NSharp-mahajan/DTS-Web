@@ -58,7 +58,7 @@ const Footer = () => {
             </form>
             <div className="social-icons">
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/design_thinking_chitkara/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-icon"
@@ -71,7 +71,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/company/design-thinking-cuiet/posts/?feedView=all" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-icon"

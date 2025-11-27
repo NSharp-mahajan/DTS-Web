@@ -43,6 +43,8 @@ const heads = [
     role: 'Social Media Head',
     name: 'Vanshika',
     image: vanshikaImg,
+    position: 'center 12%',
+    size: '155%',
     linkedin: '#'
   },
   {
@@ -76,7 +78,8 @@ const Heads = () => {
                   className="head-image"
                   style={{
                     backgroundImage: `url(${head.image})`,
-                    backgroundPosition: head.position || 'center'
+                    backgroundPosition: head.position || 'center',
+                    backgroundSize: head.size || 'cover'
                   }}
                 />
               </div>
